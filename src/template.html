@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo List</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar blur fixed-top">
+        <div class="container justify-content-end">
+          <div class="justify-content-end">
+            <div
+              class="d-grid gap-3"
+              style="grid-auto-flow: column; align-items: center"
+            >
+              <a
+                href="#"
+                id="theme-toggle"
+                class="fs-4"
+                aria-label="Toggle dark mode"
+                ><i class="bi bi-moon-fill"></i
+              ></a>
+              <button type="button" class="btn btn-primary addProjectButton">
+                Add New Project</button
+              ><button class="btn btn-light border addTodoButton">
+                Add Todo
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <div id="content"></div>
+    </main>
+
+    <footer class="footer fixed-bottom bg-dark text-center py-3 text-lg-start">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col text-center text-light">
+            <p>© 2025 Victor T. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
