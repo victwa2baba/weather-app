@@ -2,7 +2,6 @@ import "./style.css";
 import "./scss/styles.scss";
 import * as bootstrap from "bootstrap";
 import { format } from "date-fns";
-import image from "./img/ripples.svg";
 import cloudy from './img/cloud_weather_icon.png';
 import heavyRain from './img/cloud_heavy rain_rain_storm_thunderbolt_icon.png';
 import rain from './img/cloud_heavy rain_rain_weather_icon.png';
@@ -11,47 +10,17 @@ import partly from './img/partly-cloudy.png';
 
 
 
-// preloader
-function preloader() {
-  // Create preloader element
-  const preloaderDiv = document.createElement("div");
-  preloaderDiv.className = "preloader";
-
-  // Add loading spinner image
-  const loadingImg = document.createElement("img");
-  loadingImg.src = image;
-  loadingImg.alt = "Loading...";
-
-  // Append elements
-  preloaderDiv.appendChild(loadingImg);
-  content.appendChild(preloaderDiv);
-
-  return preloaderDiv;
-}
-
-// view form preloader
-function viewFormPreloader() {
-  const preloaderDiv = preloader();
-  setTimeout(() => {
-    preloaderDiv.classList.add("fade-out");
-    setTimeout(() => {
-      preloaderDiv.remove();
-      // viewTodoForm();
-    }, 300); // Wait for fade animation to complete
-  }, 1000);
-}
 
 
 // Variables
 const toggleButton = document.getElementById("theme-toggle");
 const body = document.body;
-const headerJs = document.querySelector('.headerJs');
+const headerForm = document.querySelector('.headerForm');
 const content = document.querySelector("#content");
 const locationJs = document.querySelector('.locationJs');
 const dateJs = document.querySelector('.dateJs');
 let place = 'Lagos';
-const search = document.querySelector('.search');
-const apiKey = 'AR8GR5GKW8YE47AU3PM2DC98H';
+// const apiKey = 'AR8GR5GKW8YE47AU3PM2DC98H';
 const apiKey1 = 'SCGKA8BRAZGSUNMAZK8ZACEHX';
 
 
@@ -152,7 +121,7 @@ async function header () {
     button.innerHTML = '<i class="bi bi-binoculars"></i>';
 
     // Appendchildren
-    headerJs.prepend(form);
+    headerForm.prepend(form);
     form.appendChild(container);
     container.appendChild(input);
     container.appendChild(button);
@@ -259,21 +228,8 @@ neededData.days.forEach((element, index ) => {
   // Below the containerGrid
   const hourContainer = document.createElement('div');
   hourContainer.setAttribute('class', 'd-grid shape pb-100');
-  // const hourSubContainer = document.createElement('div');
-  // hourSubContainer.setAttribute('class', 'container d-flex gap-5');
-  // const hourTime = document.createElement('div');
-  // hourTime.setAttribute('class', 'pe-3 d-grid');
-  // // hourTime.innerText = `<p class="fs-5">${hourTemp}<sup>o</sup></p>
-  //             // <p>${hourHour}</p>`;
-  // const navButtonContainer = document.createElement('div');
-  // navButtonContainer.setAttribute('class', 'd-flex gap-3');
-  // navButtonContainer.innerHTML = `<button class="btn btn-secondary prev">
-  //               <i class="bi bi-chevron-left"></i>
-  //             </button>
-  //             <button class="btn btn-secondary next">
-  //               <i class="bi bi-chevron-right"></i>
-  //             </button>`; 
-
+  
+  
   // Append children
   content.appendChild(containerGrid);
   containerGrid.appendChild(firstSubContainer);
@@ -293,9 +249,6 @@ neededData.days.forEach((element, index ) => {
   containerGrid.appendChild(thirdSubContainer);
   
   content.appendChild(hourContainer);
-  // hourContainer.appendChild(hourSubContainer);
-  // hourContainer.appendChild(hourTime);
-  // hourContainer.appendChild(navButtonContainer);
 }
 
 displayContent();

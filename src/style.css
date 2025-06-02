@@ -197,10 +197,16 @@ body.dark-mode .form-text {
 body.dark-mode .project {
   box-shadow: 0 0 10px rgb(255 255 255 / 24%);
 }
+body.dark-mode .bg-body-tertiary {
+  background: #2a2a2a !important;
+}
+body.dark-mode .navbar-toggler {
+  background-color: white !important;
+}
 
 .header-grid {
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-columns: 2fr 1fr;
 }
 .location-grid {
   display: grid;
@@ -319,4 +325,22 @@ background-image: url('data:image/svg+xml;charset=utf8, <svg xmlns="http://www.w
 .shape::before{
 background-size: 100% calc(2vw + 182px);
 }
+}
+@media (max-width: 890px) {
+  .content-grid {
+    grid-template-columns: 1fr;
+    padding-bottom: 100px !important;
+  }
+  .content-grid > div:nth-of-type(2), .shape {
+    display: none !important;
+  }
+  .header-grid {
+    margin-top: 10px;
+  }
+  .description {
+    width: 22ch
+  }
+  .location-grid {
+    justify-self: baseline
+  }
 }
